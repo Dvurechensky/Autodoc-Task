@@ -1,0 +1,74 @@
+﻿@using Autodoc.Accessories.LoggingAccessories
+@model AutodocModel;
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div>
+    <table class="table-container">
+    <thead>
+        <tr>
+        <th>Идентификатор</th>
+        <th>Наименование</th>
+        <th>Время создания</th>
+        <th>Статус выполнения</th>
+        <th>Адреса до прикреплённых файлов</th>
+        <th>Файл №1 в БД</th>
+        <th>Файл №2 в БД</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model.Tasks)
+        {
+          <tr>
+            <td>@task.IdTask</td>
+            <td>@task.Name</td>
+            <td>@task.TimeCreate</td>
+            <td>@task.Status</td>
+            <td class="urls">@foreach (var item in task.Files)
+                {
+                    <a href="@item" target="_blank">@item</a>
+                }
+            </td>
+            <td>@if(task.ImageFiles_1 != null)
+                {
+                   <svg>
+                       <use xlink:href="#plus_icon" />
+                   </svg>
+                }
+                else
+                {
+                   <svg>
+                       <use xlink:href="#minus_icon" />
+                   </svg>
+                }
+            </td>
+            <td>@if(task.ImageFiles_2 != null)
+                {
+                   <svg>
+                       <use xlink:href="#plus_icon" />
+                   </svg>
+                }
+                else
+                {
+                   <svg>
+                       <use xlink:href="#minus_icon" />
+                   </svg>
+                }
+            </td>
+          </tr>
+        }
+    </tbody>
+    </table>
+</div>
+
+<div class="hidden">
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol viewBox="0 0 24 24" id="plus_icon">
+                <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
+        </symbol>
+        <symbol viewBox="0 0 24 24" id="minus_icon">
+            <path d="M0 10h24v4h-24z" />
+        </symbol>
+    </svg>
+</div>

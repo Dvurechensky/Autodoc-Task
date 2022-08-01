@@ -1,0 +1,698 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Autodoc</name>
+    </assembly>
+    <members>
+        <member name="T:Autodoc.Accessories.ConfigurationAccessories.CommonConfigurationExtensions">
+            <summary>
+            Класс вспомогательных методов общей конфигурации
+            </summary>
+        </member>
+        <member name="F:Autodoc.Accessories.ConfigurationAccessories.CommonConfigurationExtensions._commonConfiguration">
+            <summary>
+            Данные общей конфигурации
+            </summary>
+        </member>
+        <member name="P:Autodoc.Accessories.ConfigurationAccessories.CommonConfigurationExtensions.CommonConfiguration">
+            <summary>
+            Обертка общих данных конфигурации
+            </summary>
+        </member>
+        <member name="F:Autodoc.Accessories.ConfigurationAccessories.CommonConfigurationExtensions._mainDomain">
+            <summary>
+            Главный домен приложения
+            </summary>
+        </member>
+        <member name="P:Autodoc.Accessories.ConfigurationAccessories.CommonConfigurationExtensions.MainDomain">
+            <summary>
+            Обертка главного домена приложения
+            </summary>
+        </member>
+        <member name="M:Autodoc.Accessories.ConfigurationAccessories.CommonConfigurationExtensions.GenerateConfiguration">
+            <summary>
+            Метод генерирует данные общей конфигурации
+            </summary>
+            <returns>Данные общей конфигурации</returns>
+        </member>
+        <member name="T:Autodoc.Accessories.JsonAccessories.JsonExtensions">
+            <summary>
+            Класс вспомогательных методов для работы с JSON
+            </summary>
+        </member>
+        <member name="M:Autodoc.Accessories.JsonAccessories.JsonExtensions.DeserializeTo``1(System.String,System.Text.Json.Serialization.JsonConverter)">
+            <summary>
+            Метод - расширение десериализует JSON строку в объект заданного типа
+            </summary>
+            <typeparam name="T">Тип данных</typeparam>
+            <param name="value">JSON строка</param>
+            <param name="jsonConverter">Кастомный конвертер</param>
+            <returns></returns>
+        </member>
+        <member name="M:Autodoc.Accessories.JsonAccessories.JsonExtensions.SerializeToJson(System.Object,System.Text.Json.Serialization.JsonConverter)">
+            <summary>
+            Метод - расширение формата объекта в JSON строку
+            </summary>
+            <param name="data">Входящий объект</param>
+            <param name="jsonConverter">Кастомный конвертер</param>
+            <returns>Строка JSON</returns>
+        </member>
+        <member name="M:Autodoc.Accessories.JsonAccessories.JsonExtensions.SuccessResponse(System.Object,System.Text.Json.Serialization.JsonConverter)">
+            <summary>
+            Метод - расширение форматирует объект в ответ с JSON строкой в теле
+            </summary>
+            <param name="data">Входящий объект</param>
+            <param name="jsonConverter">Кастомный конвертер</param>
+            <returns>Результат ответа</returns>
+        </member>
+        <member name="M:Autodoc.Accessories.JsonAccessories.JsonExtensions.FailedResponse(System.String,Autodoc.FormatsData.AppEnumsData.SideError)">
+            <summary>
+            Метод - расширение отдает ответ о неудачном запросе
+            </summary>
+            <param name="reason">Причина неудачного запроса</param>
+            <param name="sideError">На чьей стороне возникла ошибка</param>
+            <returns>Результат ответа</returns>
+        </member>
+        <member name="T:Autodoc.Accessories.LoggingAccessories.LoggingExtensions">
+            <summary>
+            Вспомогательные методы логирования
+            </summary>
+        </member>
+        <member name="F:Autodoc.Accessories.LoggingAccessories.LoggingExtensions._appDir">
+            <summary>
+            Полный путь к рабочей директории приложения
+            </summary>
+        </member>
+        <member name="P:Autodoc.Accessories.LoggingAccessories.LoggingExtensions.AppDir">
+            <summary>
+            Обертка полного пути к рабочей директории приложения
+            </summary>
+        </member>
+        <member name="F:Autodoc.Accessories.LoggingAccessories.LoggingExtensions._WWWDir">
+            <summary>
+            Полный путь к директории wwwroot/files
+            </summary>
+        </member>
+        <member name="P:Autodoc.Accessories.LoggingAccessories.LoggingExtensions.WWWDir">
+            <summary>
+            Обертка полного пути к директории wwwroot/files
+            </summary>
+        </member>
+        <member name="P:Autodoc.Accessories.LoggingAccessories.LoggingExtensions.WWWDirImg">
+            <summary>
+            Обертка полного пути к директории wwwroot/img
+            </summary>
+        </member>
+        <member name="F:Autodoc.Accessories.LoggingAccessories.LoggingExtensions._logging">
+            <summary>
+            Интерфейс логирования
+            </summary>
+        </member>
+        <member name="P:Autodoc.Accessories.LoggingAccessories.LoggingExtensions.Logging">
+            <summary>
+            Обертка интерфейса логирования
+            </summary>
+        </member>
+        <member name="M:Autodoc.Accessories.LoggingAccessories.LoggingExtensions.TotalSecondsTimeString">
+            <summary>
+            Метод - формирует дату в секунды
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Autodoc.Accessories.LoggingAccessories.LoggingExtensions.LogException(System.Exception,System.String)">
+            <summary>
+            Метод - расширение логирует исключение
+            </summary>
+            <param name="exception">Исключение</param>
+            <param name="notice">Дополнительная метка для исключения</param>
+        </member>
+        <member name="M:Autodoc.Accessories.LoggingAccessories.LoggingExtensions.LogMessage(System.String)">
+            <summary>
+            Метод - расширение логирует сообщение
+            </summary>
+            <param name="textMessage">Текст сообщения</param>
+        </member>
+        <member name="T:Autodoc.Controllers.AjaxController">
+            <summary>
+            Контроллер Ajax для работы с задачами
+            </summary>
+        </member>
+        <member name="M:Autodoc.Controllers.AjaxController.GetAllTaskAsync">
+            <summary>
+            Получить все задачи
+            </summary>
+            <remarks>Получает список задач Autodoc</remarks>
+            <response code="200">Успешный запрос</response>
+            <response code="404">Данных не существует</response>
+            <response code="500">Сервер не доступен</response>
+            <returns>Метод возвращает все открытые задачи</returns>
+        </member>
+        <member name="M:Autodoc.Controllers.AjaxController.GetTask(System.Int64)">
+            <summary>
+            Получить конкретную задачу
+            </summary>
+            <param name="idTask">Идентификатор задачи</param>
+            <remarks>Получает задачу Autodoc</remarks>
+            <response code="200">Успешный запрос</response>
+            <response code="404">Данных не существует</response>
+            <response code="500">Сервер не доступен</response>
+            <returns>Метод возвращает задачу</returns>
+        </member>
+        <member name="M:Autodoc.Controllers.AjaxController.AddTask(Autodoc.FormatsData.AppRequestData.AjaxData.AddTaskDataRequest,Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Добавить задачу
+            </summary>
+            <param name="addTaskDataRequest">Объект данных о задаче</param>
+            <param name="ImageFiles_1">Первое изображение</param>
+            <param name="ImageFiles_2">Второе изображение</param>
+            <response code="200">Успешный запрос</response>
+            <response code="404">Данных не существует</response>
+            <response code="500">Сервер не доступен</response>
+            <returns>Метод возвращает результат добавления задачи</returns>
+        </member>
+        <member name="M:Autodoc.Controllers.AjaxController.ChangeStatusTask(System.Int64,System.Boolean)">
+            <summary>
+            Изменить статус задачи
+            </summary>
+            <param name="idTask">Идентификатор задачи</param>
+            <param name="status">Статус выполнения задачи</param>
+            <remarks>Изменяет статус выполнения задачи Autodoc</remarks>
+            <response code="200">Успешный запрос</response>
+            <response code="404">Данных не существует</response>
+            <response code="500">Сервер не доступен</response>
+            <returns>Метод возвращает результат изменения задачи</returns>
+        </member>
+        <member name="M:Autodoc.Controllers.AjaxController.ChangeFileTask(System.Int64,Autodoc.FormatsData.AppEnumsData.FileNumber,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Изменить файл задачи
+            </summary>
+            <param name="idTask">Идентификатор задачи</param>
+            <param name="index">Какой файл менять</param>
+            <param name="ImageFiles">Файл</param>
+            <remarks>Изменяет файл задачи Autodoc</remarks>
+            <response code="200">Успешный запрос</response>
+            <response code="404">Задачи не существует</response>
+            <response code="500">Сервер не доступен</response>
+            <returns>Метод возвращает результат изменения задачи</returns>
+        </member>
+        <member name="M:Autodoc.Controllers.AjaxController.DeleteTask(System.Int64)">
+            <summary>
+            Удалить задачу
+            </summary>
+            <remarks>Удаляет задачу Autodoc</remarks>
+            <response code="200">Успешный запрос</response>
+            <response code="404">Данных не существует</response>
+            <response code="500">Сервер не доступен</response>
+            <returns>Метод возвращает результат удаления задачи</returns>
+        </member>
+        <member name="T:Autodoc.Controllers.FilesController">
+            <inheritdoc />
+            <summary>
+            Контроллер Ajax запросов с сайта
+            </summary>
+        </member>
+        <member name="M:Autodoc.Controllers.FilesController.ConvertFilesToByteA(Microsoft.AspNetCore.Http.IFormFile,System.Boolean)">
+            <summary>
+            Метод - формируем набор bytea данных из списка файлов
+            </summary>
+            <remarks>Формирует типизированный список файлов на сервере Autodoc в ByteA</remarks>
+            <response code="200">Успешный запрос - сформировано</response>
+            <response code="404">Данных не существует на сервере</response>
+            <response code="500">Сервер не доступен</response>
+            <param name="ImageFiles">Список файлов</param>
+            <param name="saveServer">Сохранять на сервере в папке wwwroot/files?</param>
+            <returns>Список ByteA файлов для сохранения на сервер</returns>
+        </member>
+        <member name="M:Autodoc.Controllers.FilesController.ConvertByteToImageAsync(System.Byte[],System.Boolean)">
+            <summary>
+            Метод - Производит конвертацию файла с базы данных в её оригинальный формат
+            </summary>
+            <param name="file">byte[] данные файла</param>
+            <param name="saveServer">Сохранять на сервере в папке wwwroot/img?</param>
+            <remarks>Конвертирует файл с базы данных для получения</remarks>
+            <response code="200">Успешный запрос - конвертировано</response>
+            <response code="404">Данных не существует на сервере</response>
+            <response code="500">Сервер не доступен</response>
+        </member>
+        <member name="M:Autodoc.Controllers.FilesController.DeleteAsync(System.String)">
+            <summary>
+            Метод - Производит асинхронное удаление файла с сервера
+            </summary>
+            <remarks>Удаляет файл с сервера Autodoc</remarks>
+            <response code="200">Успешный запрос - удалено</response>
+            <response code="404">Данных не существует на сервере</response>
+            <response code="500">Сервер не доступен</response>
+            <param name="path">Путь до файла на сервере</param>
+        </member>
+        <member name="T:Autodoc.Controllers.HomeController">
+            <summary>
+            Базовый функционал
+            </summary>
+        </member>
+        <member name="M:Autodoc.Controllers.HomeController.Index">
+            <summary>
+            Главная страница
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Autodoc.Controllers.HomeController.Documnets">
+            <summary>
+            Cтраница документации
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Autodoc.Controllers.HomeController.Error">
+            <summary>
+            Страница ошибки
+            </summary>
+            <returns>Результат действия</returns>
+        </member>
+        <member name="T:Autodoc.FormatsData.AppDataBaseData.ConfigDataBase">
+            <summary>
+            Объект данных о конфигурации подключения к базе данных
+            </summary>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppDataBaseData.ConfigDataBase.HostDb">
+            <summary>
+            Хост базы данных
+            </summary>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppDataBaseData.ConfigDataBase.PortDb">
+            <summary>
+            Порт базы данных
+            </summary>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppDataBaseData.ConfigDataBase.NameDb">
+            <summary>
+            Имя базы данных
+            </summary>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppDataBaseData.ConfigDataBase.UserDb">
+            <summary>
+            Пользователь базы данных
+            </summary>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppDataBaseData.ConfigDataBase.PasswordDb">
+            <summary>
+            Пароль базы данных
+            </summary>
+        </member>
+        <member name="T:Autodoc.FormatsData.AppEnumsData.FileNumber">
+            <summary>
+            Перечисление какой файл изменить
+            </summary>
+        </member>
+        <member name="F:Autodoc.FormatsData.AppEnumsData.FileNumber.File_One">
+            <summary>
+            Первый файл
+            </summary>
+        </member>
+        <member name="F:Autodoc.FormatsData.AppEnumsData.FileNumber.File_Two">
+            <summary>
+            Второй файл
+            </summary>
+        </member>
+        <member name="T:Autodoc.FormatsData.AppEnumsData.SideError">
+            <summary>
+            Перечисление на чьей стороне возникла ошибка
+            </summary>
+        </member>
+        <member name="F:Autodoc.FormatsData.AppEnumsData.SideError.UserSide">
+            <summary>
+            Ошибка на стороне пользователя
+            </summary>
+        </member>
+        <member name="F:Autodoc.FormatsData.AppEnumsData.SideError.ServerSide">
+            <summary>
+            Ошибка на стороне сервера
+            </summary>
+        </member>
+        <member name="T:Autodoc.FormatsData.AppRequestData.AjaxData.AddTaskDataRequest">
+            <summary>
+            Объект данных о задаче
+            </summary>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppRequestData.AjaxData.AddTaskDataRequest.Name">
+            <summary>
+            Имя задачи
+            </summary>
+            <example>Autodoc Example Name Task</example>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppRequestData.AjaxData.AddTaskDataRequest.Status">
+            <summary>
+            Статус выполнения задачи
+            </summary>
+            <example>false</example>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppRequestData.AjaxData.AddTaskDataRequest.Files">
+            <summary>
+            Набор URL адресов файлов задачи
+            </summary>
+            <example>
+            ["https://dvurechensky.com/downloads/task1", "https://dvurechensky.com/downloads/task1"]
+            </example>
+        </member>
+        <member name="T:Autodoc.FormatsData.AppResponseData.BadResponses.FailedRequestReason">
+            <summary>
+            Объект данных о причине неудачного запроса
+            </summary>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppResponseData.BadResponses.FailedRequestReason.Reason">
+            <summary>
+            Причина неудачного запроса
+            </summary>
+        </member>
+        <member name="T:Autodoc.FormatsData.AppTaskData.TaskData">
+            <summary>
+            Объект данных о задаче
+            </summary>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppTaskData.TaskData.IdTask">
+            <summary>
+            Идентификатор задачи
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppTaskData.TaskData.Name">
+            <summary>
+            Имя задачи
+            </summary>
+            <example>Autodoc Example Name Task</example>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppTaskData.TaskData.TimeCreate">
+            <summary>
+            Дата задачи
+            </summary>
+            <example>2022-07-30T15:06:15.622Z</example>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppTaskData.TaskData.Status">
+            <summary>
+            Статус выполнения задачи
+            </summary>
+            <example>false</example>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppTaskData.TaskData.Files">
+            <summary>
+            Набор URL адресов файлов задачи (пути до файлов)
+            </summary>
+            <example>
+            ["https://dvurechensky.com/downloads/task1", "https://dvurechensky.com/downloads/task1"]
+            </example>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppTaskData.TaskData.ImageFiles_1">
+            <summary>
+            Файлы №1 загруженный на сервер
+            </summary>
+        </member>
+        <member name="P:Autodoc.FormatsData.AppTaskData.TaskData.ImageFiles_2">
+            <summary>
+            Файлы №2 загруженный на сервер
+            </summary>
+        </member>
+        <member name="T:Autodoc.Models.AutodocModel">
+            <summary>
+            Хранилище данных Autodoc
+            </summary>
+        </member>
+        <member name="P:Autodoc.Models.AutodocModel.Tasks">
+            <summary>
+            Список задач в базе
+            </summary>
+        </member>
+        <member name="T:Autodoc.Models.ErrorViewModel">
+            <summary>
+            Модель представления ошибки
+            </summary>
+        </member>
+        <member name="P:Autodoc.Models.ErrorViewModel.RequestId">
+            <summary>
+            Идентификатор запроса
+            </summary>
+        </member>
+        <member name="P:Autodoc.Models.ErrorViewModel.ShowRequestId">
+            <summary>
+            Показать ID
+            </summary>
+        </member>
+        <member name="T:Autodoc.Program">
+            <summary>
+            Стартовый класс приложения
+            </summary>
+        </member>
+        <member name="M:Autodoc.Program.Main(System.String[])">
+            <summary>
+            Стартовый метод приложения
+            </summary>
+        </member>
+        <member name="T:Autodoc.Services.AppLoggingService.ILoggingService">
+            <summary>
+            Интерфейс логирования
+            </summary>
+        </member>
+        <member name="M:Autodoc.Services.AppLoggingService.ILoggingService.InitializeLogging(System.String)">
+            <summary>
+            Метод инициализирует сервис логирования
+            </summary>
+            <param name="nameProject">Название проекта</param>
+        </member>
+        <member name="M:Autodoc.Services.AppLoggingService.ILoggingService.DeinitializeLogging">
+            <summary>
+            Метод деинициализирует сервис логирования
+            </summary>
+        </member>
+        <member name="M:Autodoc.Services.AppLoggingService.ILoggingService.LogMessageAsync(System.String)">
+            <summary>
+            Метод логирует сообщения
+            </summary>
+            <param name="textMessage">Текст сообщения</param>
+        </member>
+        <member name="M:Autodoc.Services.AppLoggingService.ILoggingService.LogExceptionAsync(System.Exception,System.String)">
+            <summary>
+            Метод логирует исключения
+            </summary>
+            <param name="exception">Исключение</param>
+            <param name="notice">Дополнительная метка для исключения</param>
+        </member>
+        <member name="T:Autodoc.Services.AppLoggingService.Implements.LoggingService">
+            <inheritdoc />
+            <summary>
+            Реализация интерфейса логирования
+            </summary>
+        </member>
+        <member name="P:Autodoc.Services.AppLoggingService.Implements.LoggingService.NameLogDir">
+            <summary>
+            Имя директории хранения логов
+            </summary>
+        </member>
+        <member name="P:Autodoc.Services.AppLoggingService.Implements.LoggingService.Locker">
+            <summary>
+            Блокиратор
+            </summary>
+        </member>
+        <member name="P:Autodoc.Services.AppLoggingService.Implements.LoggingService.LoggingWriter">
+            <summary>
+            TextWriter логирования
+            </summary>
+        </member>
+        <member name="P:Autodoc.Services.AppLoggingService.Implements.LoggingService.ChangeLogFilesTimer">
+            <summary>
+            Таймер изменения текущих файлов лога
+            </summary>
+        </member>
+        <member name="M:Autodoc.Services.AppLoggingService.Implements.LoggingService.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="M:Autodoc.Services.AppLoggingService.Implements.LoggingService.InitializeLogging(System.String)">
+            <inheritdoc />
+            <summary>
+            Метод инициализирует сервис логирования
+            </summary>
+            <param name="nameProject">Название проекта</param>
+        </member>
+        <member name="M:Autodoc.Services.AppLoggingService.Implements.LoggingService.DeinitializeLogging">
+            <inheritdoc />
+            <summary>
+            Метод деинициализирует сервис логирования
+            </summary>
+        </member>
+        <member name="M:Autodoc.Services.AppLoggingService.Implements.LoggingService.LogMessageAsync(System.String)">
+            <inheritdoc />
+            <summary>
+            Метод логирует сообщения
+            </summary>
+            <param name="textMessage">Текст сообщения</param>
+        </member>
+        <member name="M:Autodoc.Services.AppLoggingService.Implements.LoggingService.LogExceptionAsync(System.Exception,System.String)">
+            <inheritdoc />
+            <summary>
+            Метод логирует исключения
+            </summary>
+            <param name="exception">Исключение</param>
+            <param name="notice">Дополнительная метка для исключения</param>
+        </member>
+        <member name="T:Autodoc.Services.DataBaseService.IDataBaseService">
+            <inheritdoc />
+            <summary>
+            Интерфейс базы данных приложения
+            </summary>
+        </member>
+        <member name="M:Autodoc.Services.DataBaseService.IDataBaseService.GetAllTaskAsync">
+            <summary>
+            Метод получает все задачи
+            </summary>
+            <returns>Объект данных о всех задачах Autodoc</returns>
+        </member>
+        <member name="M:Autodoc.Services.DataBaseService.IDataBaseService.GetTask(System.Int64)">
+            <summary>
+            Метод получает задачу
+            </summary>
+            <param name="idTask">Идентификатор задачи</param>
+            <returns>Объект данных о задаче Autodoc</returns>
+        </member>
+        <member name="M:Autodoc.Services.DataBaseService.IDataBaseService.AddTask(System.String,System.Boolean,System.String[],System.Byte[],System.Byte[])">
+            <summary>
+            Метод добавляет задачу
+            </summary>
+            <param name="name">Наименование</param>
+            <param name="status">Статус выполнения</param>
+            <param name="files">Файлы задачи на сервере</param>
+            <param name="uploadFiles_1">Файл 1 загружаемый в БД</param>
+            <param name="uploadFiles_2">Файл 2 загружаемый в БД</param>
+            <returns>Объект данных о результате добавления задачи Autodoc</returns>
+        </member>
+        <member name="M:Autodoc.Services.DataBaseService.IDataBaseService.DeleteTask(System.Int64)">
+            <summary>
+            Метод удаляет задачу
+            </summary>
+            <param name="idTask">Идентификатор задачи</param>
+            <returns>Объект данных о результате удаления задачи Autodoc</returns>
+        </member>
+        <member name="M:Autodoc.Services.DataBaseService.IDataBaseService.ChangeStatusTask(System.Int64,System.Boolean)">
+            <summary>
+            Метод изменяет статус задачи
+            </summary>
+            <param name="idTask">Идентификатор задачи</param>
+            <param name="status">Статус выполнения</param>
+            <returns>Объект данных о результате изменения задачи Autodoc</returns>
+        </member>
+        <member name="M:Autodoc.Services.DataBaseService.IDataBaseService.ChangeFileTask(System.Int64,Autodoc.FormatsData.AppEnumsData.FileNumber,System.Byte[])">
+            <summary>
+            Метод изменяет файл задачи
+            </summary>
+            <param name="idTask">Идентификатор задачи</param>
+            <param name="index">Какой файл менять</param>
+            <param name="imageFiles">Файл</param>
+            <returns>Объект данных о результате изменения задачи Autodoc</returns>
+        </member>
+        <member name="T:Autodoc.Services.DataBaseService.Implements.DataBaseService">
+            <summary>
+            Сервис управления базой данных
+            </summary>
+        </member>
+        <member name="F:Autodoc.Services.DataBaseService.Implements.DataBaseService._configureDb">
+            <summary>
+            Объект данных о конфигурации подключения к базе данных
+            </summary>
+        </member>
+        <member name="P:Autodoc.Services.DataBaseService.Implements.DataBaseService.ConfigureDb">
+            <summary>
+            Обертка объекта данных о конфигурации подключения к базе данных
+            </summary>
+        </member>
+        <member name="P:Autodoc.Services.DataBaseService.Implements.DataBaseService.ConnectionDb">
+            <summary>
+            Соединение Postgresql
+            </summary>
+        </member>
+        <member name="P:Autodoc.Services.DataBaseService.Implements.DataBaseService.CommandDb">
+            <summary>
+            Команда Postgresql
+            </summary>
+        </member>
+        <member name="P:Autodoc.Services.DataBaseService.Implements.DataBaseService.TransactionDb">
+            <summary>
+            Транзакция Postgresql
+            </summary>
+        </member>
+        <member name="M:Autodoc.Services.DataBaseService.Implements.DataBaseService.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="M:Autodoc.Services.DataBaseService.Implements.DataBaseService.Dispose">
+            <inheritdoc />
+            <summary>
+            Разрушитель соединения Postgresql
+            </summary>
+        </member>
+        <member name="M:Autodoc.Services.DataBaseService.Implements.DataBaseService.GetAllTaskAsync">
+            <summary>
+            Метод получает все задачи Autodoc
+            </summary>
+            <returns>Объект данных о всех задачах Autodoc</returns>
+        </member>
+        <member name="M:Autodoc.Services.DataBaseService.Implements.DataBaseService.GetTask(System.Int64)">
+            <summary>
+            Метод получает задачу
+            </summary>
+            <param name="idTask">Идентификатор задачи</param>
+            <returns>Объект данных о задаче Autodoc</returns>
+        </member>
+        <member name="M:Autodoc.Services.DataBaseService.Implements.DataBaseService.AddTask(System.String,System.Boolean,System.String[],System.Byte[],System.Byte[])">
+            <summary>
+            Метод добавляет задачу
+            </summary>
+            <param name="name">Наименование</param>
+            <param name="status">Статус выполнения</param>
+            <param name="files">Файлы задачи на сервере</param>
+            <param name="uploadFiles_1">Файл 1 загружаемый в БД</param>
+            <param name="uploadFiles_2">Файл 2 загружаемый в БД</param>
+            <returns>Объект данных о результате добавления задачи Autodoc</returns>
+        </member>
+        <member name="M:Autodoc.Services.DataBaseService.Implements.DataBaseService.DeleteTask(System.Int64)">
+            <summary>
+            Метод удаляет задачу
+            </summary>
+            <param name="idTask">Идентификатор задачи</param>
+            <returns>Объект данных о результате удаления задачи Autodoc</returns>
+        </member>
+        <member name="M:Autodoc.Services.DataBaseService.Implements.DataBaseService.ChangeStatusTask(System.Int64,System.Boolean)">
+            <summary>
+            Метод изменяет статус задачи
+            </summary>
+            <param name="idTask">Идентификатор задачи</param>
+            <param name="status">Статус выполнения</param>
+            <returns>Объект данных о результате изменения задачи Autodoc</returns>
+        </member>
+        <member name="M:Autodoc.Services.DataBaseService.Implements.DataBaseService.ChangeFileTask(System.Int64,Autodoc.FormatsData.AppEnumsData.FileNumber,System.Byte[])">
+            <summary>
+            Метод изменяет файл задачи
+            </summary>
+            <param name="idTask">Идентификатор задачи</param>
+            <param name="index">Какой файл менять</param>
+            <param name="imageFiles">Файл</param>
+            <returns>Объект данных о результате изменения задачи Autodoc</returns>
+        </member>
+        <member name="T:Autodoc.Startup">
+            <summary>
+            Класс конфигурации приложения 
+            </summary>
+        </member>
+        <member name="M:Autodoc.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Конфигурация используемых сервисов в приложении
+            </summary>
+            <param name="services">Интерфейс коллекции используемых сервисов</param>
+        </member>
+        <member name="M:Autodoc.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
+            <summary>
+            Конфигурация роутинга запросов приложения и действий при старте и остановке
+            </summary>
+            <param name="app">Интерфейс конфигурации роутинга запросов приложения</param>
+            <param name="env">Интерфейс web хостинга приложения</param>
+            <param name="appLifetime">Интерфейс управлением запуска и отключения приложения</param>
+        </member>
+    </members>
+</doc>
