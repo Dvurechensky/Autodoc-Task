@@ -1,10 +1,10 @@
 {
   "dataBase": {
-    "hostDb": "77.73.68.74",
-    "portDb": "5432",
-    "nameDb": "dvurechensky",
-    "userDb": "dvurechensky",
-    "passwordDb": "nFzNODZ0FnRcl2fC6uI4"
+    "hostDb": "73.73.68.74",
+    "portDb": "5132",
+    "nameDb": "dvur",
+    "userDb": "dvur",
+    "passwordDb": "test"
   }
 }
 
